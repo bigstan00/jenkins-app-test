@@ -8,15 +8,14 @@ pipeline{
         }
         stage("checkout something"){
             steps{
-                echo "Welcome" >> index.txt
+                echo "Welcome" > index.txt
             }
         }
         stage("rolling") {
             steps{
                 sh '''
-                        echo "run" >> index.txt
+                        echo "gotcha" > index.txt
                         cat index.txt
-                        
                    '''
             }
         }
