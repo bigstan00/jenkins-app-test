@@ -6,5 +6,19 @@ pipeline{
                 echo "Welcome to your first class using Jenkins"
             }
         }
-    }
+        stage("checkout something"){
+            steps{
+                echo "Welcome" >> index.txt
+            }
+        }
+        stage("rolling") {
+            steps{
+                sh '''
+                        echo "run" >> index.txt
+                        cat index.txt
+                        
+                   '''
+            }
+        }
+     }
 }
