@@ -40,7 +40,6 @@ pipeline {
                     cd /var
                     sudo rm -rf www
                     sudo mkdir www
-                    rm -rf html
                     cd /var/www
 
                 '''
@@ -49,6 +48,7 @@ pipeline {
         stage("deploy"){
             steps{
                 sh '''
+                    cd /var/www/html
                     sudo git clone https://github.com/bigstan00/pix-mix.git /html
                 '''
             }
