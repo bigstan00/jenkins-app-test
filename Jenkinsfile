@@ -48,7 +48,6 @@ pipeline {
         stage("deploy"){
             steps{
                 sh '''
-                    cd /var/www/html
                     sudo git clone https://github.com/bigstan00/pix-mix.git /html
                 '''
             }
