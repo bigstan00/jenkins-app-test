@@ -37,10 +37,9 @@ pipeline {
             steps{
                 sh '''
                     sudo chown -R jenkins:jenkins /var*
-                    cd /var
-                    sudo rm -rf www
-                    sudo mkdir www
                     cd /var/www
+                    sudo rm -rf html
+                
 
                 '''
             }
