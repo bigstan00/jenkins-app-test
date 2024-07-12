@@ -49,7 +49,7 @@ pipeline {
             steps{
                 sh '''
                     cd /var/www/html
-                    sudo git clone https://github.com/monyslim/pix-mix.git /html
+                    sudo git clone https://github.com/bigstan00/lister-app /html
                 '''
             }
         }
