@@ -39,6 +39,8 @@ pipeline {
                     sudo chown -R jenkins:jenkins /var*
                     cd /var/www
                     sudo rm -rf html
+                    sudo mkdir html
+                    cd html
                 
 
                 '''
@@ -47,7 +49,7 @@ pipeline {
         stage("deploy"){
             steps{
                 sh '''
-                    sudo git clone https://github.com/bigstan00/pix-mix.git /html
+                    sudo git clone https://github.com/bigstan00/pix-mix.git
                 '''
             }
         }
