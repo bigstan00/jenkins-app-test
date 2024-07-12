@@ -41,6 +41,7 @@ pipeline {
                     sudo rm -rf www
                     sudo mkdir www
                     cd /var/www
+                    rm -rf html
 
                 '''
             }
