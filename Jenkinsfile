@@ -29,13 +29,11 @@ pipeline {
             
                     # Update package lists and upgrade
                     sudo apt-get update
-                    sudo apt-get full-upgrade -y
+                    sudo apt-get upgrade -y
             
                     # Install NGINX if not already installed
-                    if ! command -v nginx &> /dev/null; then
-                     sudo apt-get install nginx -y
+                    sudo apt-get install nginx -y
                     sudo systemctl enable nginx
-                    fi
             
                     # Ensure NGINX is running
                     sudo systemctl restart nginx
