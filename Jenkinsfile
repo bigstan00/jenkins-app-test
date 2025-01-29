@@ -25,12 +25,21 @@ pipeline {
         stage("install nginx"){
             steps {
                 sh '''
+                     set -e  # Exit on failure
+            
+                    # Update package lists and upgrade
                     sudo apt-get update
-                    sudo apt upgrade -y
-                    sudo apt-get install nginx -y
+                    sudo apt-get full-upgrade -y
+            
+                    # Install NGINX if not already installed
+                    if ! command -v nginx &> /dev/null; then
+                     sudo apt-get install nginx -y
                     sudo systemctl enable nginx
-                    sudo systemctl start nginx
-                '''
+                    fi
+            
+                    # Ensure NGINX is running
+                    sudo systemctl restart nginx
+                    '''
             }
         }
         stage("build"){
