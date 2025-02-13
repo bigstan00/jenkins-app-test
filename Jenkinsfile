@@ -2,7 +2,8 @@ pipeline {
     agent any
     options {
         buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '30', numToKeepStr: '5')
-        }
+    }
+    stages {
         stage("Install Nginx") {
             steps {
                 sh '''
